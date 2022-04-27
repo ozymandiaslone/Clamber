@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const assignments = await loadAssignmentsCollection();
     await assignments.insertOne({
-        text: req.body.text,
+        assignment_name: req.body.assignment_name,
         file: req.body.file,
         createdAt: new Date()
     });
